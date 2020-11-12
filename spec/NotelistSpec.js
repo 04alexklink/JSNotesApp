@@ -1,8 +1,14 @@
 describe('Notelist', function() {
   var notelist;
-
-  it('can be instantiated', function() {
-    notelist = new Notelist();
-    expect(notelist).toBeInstanceOf(Notelist);
-  })
+  describe('instantiation', function() {
+      beforeEach(function() {
+        notelist = new Notelist();
+      });
+    it('can be instantiated', function() {
+        expect(notelist).toBeInstanceOf(Notelist);
+      });
+    it('has an empty array by default', function() {
+      expect(notelist._notesStored).toEqual([]);
+    });
+  });
 });
