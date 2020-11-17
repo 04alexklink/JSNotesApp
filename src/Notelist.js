@@ -7,8 +7,7 @@ class Notelist {
     this._notesStored.push(note);
   };
 
-  viewNotes() {
-    return this._notesStored.map(function(note) {
-      return note._content});
+  returnNotes() {
+    return this._notesStored;
   };
 };
