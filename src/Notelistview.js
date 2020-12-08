@@ -1,14 +1,15 @@
 class Notelistview {
-  constructor(notelist) {
-    this._notelist = notelist;
+  constructor(notelist = new Notelist()) {
+    this._notelist = notelist.returnNotes();
   };
 
   viewNotes() {
-    var htmllist = "";
-    var array = this._notelist.returnNotes()
-    array.forEach((note) => {
-      htmllist += `<ul><li>${note.viewContent()}</li></ul>`;
+    var htmllist = ``;
+    this._notelist.forEach((note) => {
+      htmllist += `<li><div>${note.viewContent()}</div></li>`
     })
-    return htmllist;
+    if(htmllist !== ``) {
+      return `<ul>${htmllist}</ul>`;
+    }
   };
 };

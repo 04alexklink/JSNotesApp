@@ -1,32 +1,23 @@
 describe('Notelistview', function() {
   var notelistview;
   var notelist;
-  xit('stores a notelist object', function() {
-    notelist = new Notelist();
-    notelistview = new Notelistview(notelist);
-    expect(notelistview._notelist).toEqual(notelist);
-  });
   describe('#viewNotes', function() {
-    xit('returns nothing if notelist is empty', function() {
-      notelist = new Notelist();
-      notelistview = new Notelistview(notelist);
-      expect(notelistview.viewNotes()).toEqual("");
+    it('returns nothing if notelist is empty', function() {
+      notelistview = new Notelistview();
+      expect(notelistview.viewNotes()).toEqual();
     })
-    xit('returns the right htmllist for one note in notelist', function() {
-      note = new Note("Take out the bins");
+    it('returns the right htmllist for one note in notelist', function() {
       notelist = new Notelist();
-      notelist.addNote(note);
+      notelist.addNote("Take out the bins");
       notelistview = new Notelistview(notelist);
-      expect(notelistview.viewNotes()).toEqual("<ul><li>Take out the bins</li></ul>")
+      expect(notelistview.viewNotes()).toEqual("<ul><li><div>Take out the bins</div></li></ul>")
     })
-    xit('returns the right htmllist for >1 note in notelist', function() {
-      note1 = new Note("Take out the bins");
-      note2 = new Note("Walk the dog");
+    it('returns the right htmllist for >1 note in notelist', function() {
       notelist = new Notelist();
-      notelist.addNote(note1);
-      notelist.addNote(note2);
+      notelist.addNote("Take out the bins");
+      notelist.addNote("Walk the dog");
       notelistview = new Notelistview(notelist);
-      expect(notelistview.viewNotes()).toEqual("<ul><li>Take out the bins</li></ul><ul><li>Walk the dog</li></ul>");
+      expect(notelistview.viewNotes()).toEqual("<ul><li><div>Take out the bins</div></li><li><div>Walk the dog</div></li></ul>");
     })
   })
 });
