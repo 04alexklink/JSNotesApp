@@ -3,7 +3,8 @@ class Notelist {
     this._notesStored = [];
   }
 
-  addNote(note) {
+  addNote(text) {
+    var note = new Note(text)
     this._notesStored.push(note);
   };
 

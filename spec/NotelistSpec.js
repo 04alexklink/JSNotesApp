@@ -1,24 +1,22 @@
 describe('Notelist', function() {
   var notelist;
-  var note1;
-  var note2;
   beforeEach(function() {
     notelist = new Notelist();
-    note1 = new Note("Take the bins out");
-    note2 = new Note("Exercise");
   });
   describe('#addNote', function() {
-    it('can add a note and store it', function() {
-      notelist.addNote(note1);
-      notelist.addNote(note2);
-      expect(notelist._notesStored.length).toEqual(2);
+    it('creates a note and stores it', function() {
+      notelist.addNote("Take the bins out");
+      expect(notelist.returnNotes()[0]).toBeInstanceOf(Note);
+      expect(notelist.returnNotes()[0].viewContent()).toEqual("Take the bins out");
     });
   });
   describe('#returnNotes', function() {
-    it('returns all the notes it is storing', function() {
-      notelist.addNote(note1);
-      notelist.addNote(note2);
-      expect(notelist.returnNotes()).toEqual([note1, note2]);
+    it('returns all the notes it is storing in the order they are added', function() {
+      notelist.addNote("Take the bins out");
+      notelist.addNote("Exercise for half an hour");
+      expect(notelist.returnNotes().length).toEqual(2);
+      expect(notelist.returnNotes()[0].viewContent()).toEqual("Take the bins out");
+      expect(notelist.returnNotes()[1].viewContent()).toEqual("Exercise for half an hour");
     });
   });
 });
