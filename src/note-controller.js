@@ -1,9 +1,24 @@
-var app = document.getElementById('app');
-var note1 = new Note("Take out bins");
-var note2 = new Note("Take out the bins again")
-var notelist = new Notelist();
-notelist.addNote(note1);
-notelist.addNote(note2);
-var notelistview = new Notelistview(notelist);
-console.log(notelistview);
-app.innerHTML=`${notelistview.viewNotes()}`;
+// var app = document.getElementById('app');
+// var notelist = new Notelist();
+// notelist.addNote("Take the bins out");
+// notelist.addNote("Walk the dog");
+// var notelistview = new Notelistview(notelist);
+// app.innerHTML=`${notelistview.viewNotes()}`;
+
+class NoteController {
+  constructor(notelist) {
+    this._notelist = notelist;
+    this._notelist.addNote("Take the bins out");
+    this._notelist.addNote("Walk the dog");
+    this._notelistview = new Notelistview(this._notelist)
+    }
+
+  showNotes() {
+    var app = document.getElementById('app');
+    app.innerHTML= this._notelistview.viewNotes();
+  }
+}
+
+var notelist = new Notelist;
+notecontroller = new NoteController(notelist)
+notecontroller.showNotes()
