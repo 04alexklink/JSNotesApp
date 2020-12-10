@@ -4,12 +4,6 @@ class SingleNoteView {
   }
 
   showNote() {
-    var notehtml = `<div>${this._note}</div>`
-    return notehtml;
+    return `<div>${this._note}</div>`
   }
 }
-
-note = new Note("Take the bins out");
-singlenoteview = new SingleNoteView(note);
-
-console.log(singlenoteview.showNote());

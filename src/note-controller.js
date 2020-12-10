@@ -34,8 +34,22 @@ class NoteController {
     var app = document.getElementById('app');
     app.innerHTML= this._notelistview.viewNotesFirst20Chars();
   }
+
+  individualNote(idofnote) {
+    this._notelist.returnNotes().forEach((note) => {
+      if(note.viewID() == idofnote) {
+        var singlenoteview = new SingleNoteView(note)
+        var app = document.getElementById('app')
+        app.innerHTML= `${singlenoteview.showNote()}`
+      }
+    })
+  }
 }
 
+window.addEventListener("hashchange", function() {
+  var noteid = window.location.hash.split('#notes/')[1]
+  notecontroller.individualNote(noteid)
+})
 var notelist = new Notelist;
 notecontroller = new NoteController(notelist)
 notecontroller.showNotes()
