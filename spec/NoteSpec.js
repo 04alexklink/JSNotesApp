@@ -8,7 +8,7 @@ describe ('Note', function() {
   })
   describe('#viewID', function() {
     it('shows the id of the note that is passed in upon instantiation', function() {
-      note = new Note("Take out the bins", 0)
+      note = new Note("Take out the bins",0)
       expect(note.viewID()).toEqual(0)
     })
   })

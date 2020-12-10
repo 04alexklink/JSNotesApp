@@ -4,10 +4,11 @@ describe('Notelist', function() {
     notelist = new Notelist();
   });
   describe('#addNote', function() {
-    it('creates a note and stores it', function() {
+    it('creates a note with an id and stores it', function() {
       notelist.addNote("Take the bins out");
       expect(notelist.returnNotes()[0]).toBeInstanceOf(Note);
       expect(notelist.returnNotes()[0].viewContent()).toEqual("Take the bins out");
+      expect(notelist.returnNotes()[0].viewID()).toEqual(0)
     });
   });
   describe('#returnNotes', function() {
@@ -17,6 +18,7 @@ describe('Notelist', function() {
       expect(notelist.returnNotes().length).toEqual(2);
       expect(notelist.returnNotes()[0].viewContent()).toEqual("Take the bins out");
       expect(notelist.returnNotes()[1].viewContent()).toEqual("Exercise for half an hour");
+      expect(notelist.returnNotes()[1].viewID()).toEqual(1)
     });
   });
 });
