@@ -36,7 +36,7 @@ class NoteController {
   }
 }
 
-// var notelist = new Notelist;
-// notecontroller = new NoteController(notelist)
-// notecontroller.showNotes()
+var notelist = new Notelist;
+notecontroller = new NoteController(notelist)
+notecontroller.showNotes()
 // 4.) OOP Prototype Syntax DOM control

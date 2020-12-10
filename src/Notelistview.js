@@ -6,7 +6,7 @@ class Notelistview {
   viewNotesFirst20Chars() {
     var htmllist = ``;
     this._notelist.forEach((note) => {
-      htmllist += `<li><div>${note.viewContent().substring(0,20)}</div></li>`
+      htmllist += `<li><a href='#notes/${note.viewID()}'>${note.viewContent().substring(0,20)}</a></li>`
     })
     if(htmllist !== ``) {
       return `<ul>${htmllist}</ul>`;
