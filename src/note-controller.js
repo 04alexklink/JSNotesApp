@@ -50,6 +50,11 @@ window.addEventListener("hashchange", function() {
   var noteid = window.location.hash.split('#notes/')[1]
   notecontroller.individualNote(noteid)
 })
+
+document.getElementById('createnote').addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log(document.getElementById('notetocreate').value)
+})
 var notelist = new Notelist;
 notecontroller = new NoteController(notelist)
 notecontroller.showNotes()
