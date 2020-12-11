@@ -24,18 +24,21 @@
 class NoteController {
   constructor(notelist) {
     this._notelist = notelist;
-    this._notelist.addNote("Take the bins out");
-    this._notelist.addNote("Walk the dog");
-    this._notelist.addNote("This note is greater than 20 characters but won't show completely in the browser")
-    this._notelistview = new Notelistview(this._notelist)
-    }
-
-  showNotes() {
-    var app = document.getElementById('app');
-    app.innerHTML= this._notelistview.viewNotesFirst20Chars();
   }
 
-  individualNote(idofnote) {
+  addNote(notetext) {
+    this._notelist.addNote(notetext)
+  }
+
+  displayNotes() {
+    if(this._notelist.returnNotes().length >0) {
+    var app = document.getElementById('app');
+    var notelistview = new Notelistview(this._notelist);
+    app.innerHTML= notelistview.viewNotesFirst20Chars();
+    }
+  }
+
+  displayIndividualNote(idofnote) {
     this._notelist.returnNotes().forEach((note) => {
       if(note.viewID() == idofnote) {
         var singlenoteview = new SingleNoteView(note)
@@ -48,14 +51,17 @@ class NoteController {
 
 window.addEventListener("hashchange", function() {
   var noteid = window.location.hash.split('#notes/')[1]
-  notecontroller.individualNote(noteid)
+  notecontroller.displayIndividualNote(noteid)
 })
 
 document.getElementById('createnote').addEventListener('submit', function(event) {
   event.preventDefault();
-  console.log(document.getElementById('notetocreate').value)
+  newnotetext = document.getElementById('notetocreate').value;
+  notecontroller.addNote(newnotetext);
+  notecontroller.displayNotes();
 })
+
 var notelist = new Notelist;
 notecontroller = new NoteController(notelist)
-notecontroller.showNotes()
+notecontroller.displayNotes()
 // 4.) OOP Prototype Syntax DOM control
