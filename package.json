@@ -1,0 +1,28 @@
+{
+  "name": "jsnotesapp",
+  "version": "1.0.0",
+  "description": "User Stories: As a programmer I can create a new note So I can record something I need to remember",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/04alexklink/JSNotesApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/04alexklink/JSNotesApp/issues"
+  },
+  "homepage": "https://github.com/04alexklink/JSNotesApp#readme"
+}
