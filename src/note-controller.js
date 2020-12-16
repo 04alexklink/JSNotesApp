@@ -18,9 +18,9 @@ class NoteController {
   displayIndividualNote(idofnote) {
     this._notelist.returnNotes().forEach((note) => {
       if(note.viewID() == idofnote) {
-        var singlenoteview = new SingleNoteView(note)
+        var singlenoteview = new SingleNoteView()
         var app = document.getElementById('app')
-        app.innerHTML= `${singlenoteview.showNote()}`
+        app.innerHTML= `${singlenoteview.showNote(note)}`
       }
     })
   }

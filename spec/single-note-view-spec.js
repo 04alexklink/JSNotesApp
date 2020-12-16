@@ -1,9 +1,14 @@
 describe("SingleNoteView", function() {
   describe("showNote", function() {
     it("takes a note object and returns the note text in interpolated string output", function() {
-      var note = new Note("Take the bins out");
-      var singlenoteview = new SingleNoteView(note);
-      expect(singlenoteview.showNote()).toEqual("<div>Take the bins out</div>")
+      class NoteDouble {
+        viewContent() {
+          return "Take the bins out";
+        }
+      }
+      notedouble = new NoteDouble();
+      var singlenoteview = new SingleNoteView();
+      expect(singlenoteview.showNote(notedouble)).toEqual("<div>Take the bins out</div>")
     })
   })
 })
