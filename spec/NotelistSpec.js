@@ -1,8 +1,13 @@
 describe('Notelist', function() {
   var notelist;
   beforeEach(function() {
+    // var Noteinstance = jasmine.createSpyObj('Note',['constructor']);
+    // spyOn(window, 'Note').andReturn(Noteinstance)
     notelist = new Notelist();
   });
+  it('has no notes in it by default', function() {
+    expect(notelist.returnNotes()).toEqual([])
+  })
   describe('#addNote', function() {
     it('creates a note with an id and stores it', function() {
       notelist.addNote("Take the bins out");
