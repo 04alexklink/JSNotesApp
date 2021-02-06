@@ -35,23 +35,31 @@ As a programmer
 I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 So I can record notes with fun little pictures
 ```
-Technologies:
-This is a single-page frontend only JS web app written in vanilla JS, with Jasmine as the testing framework. 
-Structure
-src/ contains all the domain logic. interface.js contains interactions with the user
+## Technologies:
 
-Running this App:
-- Git clone this repo
-- npm install to create node_modules file and download dependencies. 
-  This is required if you want to use http-server and visit localhost, rather than option 1 below. 
-Option1:
-- open index.html 
-Option2:
-- use http server 
-$ node node_modules/http-server/bin/http-server
+This app was written in vanilla JS, with Jasmine as the testing framework. 
 
-To run unit tests:
-open SpecRunner.html
+## Structure
 
-Note on tests: I used Jasmine for unit tests. Mocking has not yet been implemented and note-controller is not tested. If I had mocked all dependencies, I'd create a feature test where the models interact. 
-I intend to use Cypress for user interaction testing/feature testing. 
+src/ contains all the domain logic. interface.js contains interactions with the user.
+
+## Running this App:
+```
+ Git clone https://github.com/04alexklink/JSNotesApp.git
+ Option1: open index.html
+ Option2: run npm install in the command line which will install http-server  
+          run $ node node_modules/http-server/bin/http-server
+          visit http address provided in the terminal
+```
+![NotesAppHomePage](images/NotesAppPage.png)
+![ExampleofCreatingNote](images/CreateNoteText.png)
+![NoteListCreated](Notelist.png)
+![DisplayingIndividualNote](Viewoffullnote.png)
+
+## Testing
+
+open SpecRunner.html. 10 unit tests should be passing. 
+
+Note on tests: I used Jasmine for unit tests. Mocking has not been implemented fully and neither note-controller not interface.js code is tested. If I had mocked all dependencies, I'd create a feature test where the models interact. 
+I would maybe use Cypress for user interaction testing/feature testing to cover code in note-controller and interface.js. 
+
