@@ -22,7 +22,7 @@ body{
 	color:#fff;
 }
 
-.box-1{
+.Welcome-Message{
     background-color:rgb(97, 32, 158);
     color:#fff;
     border:2px red solid;
@@ -30,7 +30,7 @@ body{
 	margin-top:20px;
 	margin:20px 0;
 }
-.box-1 h1{
+.Welcome-Message h1{
 	font-family:Tahoma;
 	font-weight:800;
     font-style:italic;
