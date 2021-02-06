@@ -10,17 +10,17 @@ class NoteController {
   }
 
   displayNotes() {
-    if(this._notelist.returnNotes().length >0) {
-    var app = document.getElementById('app');
-    app.innerHTML= this._notelistview.viewNotesFirst20Chars(this._notelist);
-    }
+    var noteList = document.getElementById('note-list');
+    noteList.className="note-list"
+    noteList.innerHTML= this._notelistview.viewNotesFirst20Chars(this._notelist);
   }
 
   displayIndividualNote(idofnote) {
     this._notelist.returnNotes().forEach((note) => {
       if(note.viewID() == idofnote) {
-        var app = document.getElementById('app')
-        app.innerHTML= `${this._singlenoteview.showNote(note)}`
+        var noteList = document.getElementById('note-list')
+        var html = "<button class='button' id='return-to-notelist'>Return to your notelist</button>"
+        noteList.innerHTML= `<h1>${this._singlenoteview.showNote(note)}</h1>${html}`
       }
     })
   }

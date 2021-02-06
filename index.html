@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes App</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <header>Notes App</header>
-  <div>
-    <h1>Create Note:</h1>
+  <div class="container">
+    <div class="box-1">
+      <h1>Notes</h1>
+      <p> Welcome to your Notes page! When you create a note, a summary of your
+         new note will appear in a list below. To see a note you have created in full,
+        just click on the note summary. </p>
+    </div>
+  <div class=note-form>
+    <h1>Create a Note</h1>
     <form id="createnote" action="#notes/" method="post" >
-      <label for="createnote">Create note:</label><br>
       <input type="textarea" name="createnote" id="notetocreate"><br>
-      <input type="submit" value="Submit">
+      <input type="submit" class="button" value="Submit">
     </form>
   </div>
-  <div id="app"></div>
+  <div id="note-list">
+  </div>
   <script src="src/Note.js"></script>
   <script src="src/Notelist.js"></script>
   <script src="src/Notelistview.js"></script>
   <script src="src/note-controller.js"></script>
   <script src="src/single-note-view.js"></script>
   <script src="interface.js"></script>
+</div>
 </body>
 </html>

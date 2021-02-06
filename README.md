@@ -24,10 +24,13 @@ src/ contains all the domain logic. interface.js contains interactions with the 
 
 Running this App:
 - Git clone this repo
+- npm install to create node_modules file and download dependencies. 
+  This is required if you want to use http-server and visit localhost, rather than option 1 below. 
 Option1:
 - open index.html 
 Option2:
 - use http server 
+$ node node_modules/http-server/bin/http-server
 
 To run unit tests:
 open SpecRunner.html

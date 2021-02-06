@@ -8,7 +8,7 @@ describe("SingleNoteView", function() {
       }
       notedouble = new NoteDouble();
       var singlenoteview = new SingleNoteView();
-      expect(singlenoteview.showNote(notedouble)).toEqual("<div>Take the bins out</div>")
+      expect(singlenoteview.showNote(notedouble)).toEqual("Take the bins out")
     })
   })
 })
