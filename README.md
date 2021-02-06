@@ -1,7 +1,7 @@
-#JSNotesApp
+# Vanilla JavaScript Notes App
 
-Description:
-This single-page front-only Notes App displays a text box where a user can add text and submit the note. The notes first 20 characters is then listed below the textbox as a link, which if clicked will take the user to a hash url that displays the full content of that note. They can add as many notes as they like, with each new note being dyanamically inserted into the DOM at the bottom of the note list. 
+## App Info:
+This single-page frontend-only Notes App displays a text box where a user can add text and submit the note. The notes first 20 characters is then listed below the textbox as a link, which if clicked will take the user to a hash url that displays the full content of that note. They can add as many notes as they like, with each new note being dyanamically inserted into the DOM at the bottom of the note list. 
 If the user were to refresh the page, their notes will disappear. 
 
 User Stories:
@@ -16,6 +16,8 @@ So I can find the one I want
 As a programmer
 I can see the full text of an individual note on its own page
 So I can see all the information in the note
+
+https://makers-emojify.herokuapp.com/
 
 Technologies:
 This is a single-page frontend only JS web app written in vanilla JS, with Jasmine as the testing framework. 

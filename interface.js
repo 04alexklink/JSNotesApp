@@ -12,8 +12,29 @@
   
   document.getElementById('createnote').addEventListener('submit', function(event) {
     event.preventDefault();
-    newnotetext = document.getElementById('notetocreate').value;
+    var newnotetext = document.getElementById('notetocreate').value;
     document.getElementById('notetocreate').value = '';
-    notecontroller.addNote(newnotetext);
-    notecontroller.displayNotes();
+    emojifyNote(newnotetext)
   })
+
+  function emojifyNote(noteContent) {
+    var note = {text : noteContent}
+    noteJSON = JSON.stringify(note);
+    fetch('https://makers-emojify.herokuapp.com/', {
+	    method: 'POST',
+	    body: noteJSON,
+	    headers: {
+		    'Content-type': 'application/json'
+	    }
+    }).then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      return Promise.reject(response);
+    }).then(function (data) {
+      notecontroller.addNote(data.emojified_text);
+      notecontroller.displayNotes();
+    }).catch(function (error) {
+      console.warn('Something went wrong.', error);
+    });
+   }
