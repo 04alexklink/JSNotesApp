@@ -2,7 +2,7 @@
 
 ## App Info:
 
-This single-page frontend-only Notes App displays a text box where a user can add text and submit a note. The notes first 20 characters is then listed below the textbox as a link, which if clicked will take the user to a hash url that displays the full content of that note. They can add as many notes as they like, with each new note added to the bottom of the note list. If the user creates a note with emoji shortcodes, e.g. :fire, this text is sent to an [external API](https://makers-emojify.herokuapp.com/) that converts shortcodes into emojis like 🔥. 
+This single-page frontend-only Notes App displays a text box where a user can add text and submit a note. The notes first 20 characters is then listed below the textbox as a link, which if clicked will take the user to a hash url that displays the full content of that note. They can add as many notes as they like, with each new note added to the bottom of the note list. If the user creates a note with emoji shortcodes, e.g. :fire:, this text is sent to an [external API](https://makers-emojify.herokuapp.com/) that converts shortcodes into emojis like 🔥. 
 
 If the user were to refresh the page, their notes will disappear. 
 
@@ -53,8 +53,8 @@ src/ contains all the domain logic. interface.js contains interactions with the 
 ```
 ![NotesAppHomePage](images/NotesAppPage.png)
 ![ExampleofCreatingNote](images/CreateNoteText.png)
-![NoteListCreated](Notelist.png)
-![DisplayingIndividualNote](Viewoffullnote.png)
+![NoteListCreated](images/Notelist.png)
+![DisplayingIndividualNote](images/Viewoffullnote.png)
 
 ## Testing
 
