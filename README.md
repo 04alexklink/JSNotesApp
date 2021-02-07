@@ -37,7 +37,7 @@ So I can record notes with fun little pictures
 ```
 ## Technologies:
 
-This app was written in vanilla JS, with Jasmine as the testing framework. 
+This app was written in vanilla JS, with Jasmine as the testing framework. I've used some very mediocre CSS too!
 
 ## Structure
 
@@ -53,8 +53,14 @@ src/ contains all the domain logic. interface.js contains interactions with the 
 ```
 ![NotesAppHomePage](images/NotesAppPage.png)
 ![ExampleofCreatingNote](images/CreateNoteText.png)
+
+After creating a note and clicking submit, you see it within a notelist section that appears.
 ![NoteListCreated](images/Notelist.png)
+
+If you then click on the note in the notelist, the entire note is shown.
 ![DisplayingIndividualNote](images/Viewoffullnote.png)
+
+If you click Return to Notelist button, the notelist section returns to the page. 
 
 ## Testing
 
@@ -62,4 +68,3 @@ open SpecRunner.html. 10 unit tests should be passing.
 
 Note on tests: I used Jasmine for unit tests. Mocking has not been implemented fully and neither note-controller not interface.js code is tested. If I had mocked all dependencies, I'd create a feature test where the models interact. 
 I would maybe use Cypress for user interaction testing/feature testing to cover code in note-controller and interface.js. 
-
